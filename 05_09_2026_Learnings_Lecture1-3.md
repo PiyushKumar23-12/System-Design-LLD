@@ -309,6 +309,21 @@ Car* myCar = new SportsCar();
 myCar->accelerate();
 ```
 
+```cpp
+Car c;              // ❌ Error
+Car* c = new Car(); // ❌ Error
+
+class SportsCar : public Car {
+public:
+    void accelerate() override {
+        cout << "Accelerating";
+    }
+};
+
+SportsCar s;              // ✅
+Car* c = new SportsCar(); // ✅
+```
+
 The caller only needs to know:
 
 ```text
